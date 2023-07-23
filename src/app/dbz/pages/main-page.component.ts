@@ -24,5 +24,8 @@ export class MainPageComponent {
     this.characters.push(character)
 
   }
+  onDeleteCharacter (id:number ) :void {
+    this.characters.splice(id,1);
+  }
 
 }

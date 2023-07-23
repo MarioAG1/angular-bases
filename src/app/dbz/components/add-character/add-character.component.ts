@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
-import { retry } from 'rxjs';
 
 @Component({
   selector: 'dbz-add-character',
