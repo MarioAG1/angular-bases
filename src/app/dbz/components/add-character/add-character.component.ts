@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { retry } from 'rxjs';
 
 @Component({
   selector: 'dbz-add-character',
@@ -8,12 +9,28 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class AddCharacterComponent {
 
+  //Para comunicar por el main
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
   public character: Character = {
     name: "",
     power: 0
   };
 
   emitCharacter(): void {
-    console.log(this.character)
+    console.log(this.character);
+    if (this.character.name.length === 0) return;
+
+    //Enviar el nuevo personaje
+
+    this.onNewCharacter.emit({ ... this.character });
+    // Si ponemos este a la hora de ejecutar se sobreescribe la limpieza de valores y lo ejecuta pero a la hora de pasar la informaciones se queda limpia
+    // this.onNewCharacter.emit(this.character)
+
+
+    //Para limpiar los valores
+    this.character.name = "";
+    this.character.power = 0;
   }
 }
