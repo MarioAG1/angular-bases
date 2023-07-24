@@ -1,11 +1,10 @@
 <h1>Hola mundo DBZ</h1>
 <hr />
-
 <div class="row">
   <div class="col">
-    <dbz-list [characterList]="characters"
+    <dbz-list-character [characterList]="characters"
               (onDelete)="onDeleteCharacter($event)"
-    ></dbz-list>
+    ></dbz-list-character>
   </div>
   <div class="col">
     <!-- añadir personaje -->

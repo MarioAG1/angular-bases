@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
-  selector: 'dbz-list',
+  selector: 'dbz-list-character',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListCharacterComponent {
 
   @Input()
   public characterList: Character[] = [{
@@ -22,7 +22,4 @@ export class ListComponent {
     if (!id) return
     this.onDelete.emit(id);
   }
-
-
-
 }
