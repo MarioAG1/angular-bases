@@ -16,9 +16,10 @@ export class ListComponent {
   //Este es el valor por defecto
 
   @Output()
-  public onDeleteCharacter: EventEmitter<number> = new EventEmitter();
+  public onDeleteCharacter: EventEmitter<string> = new EventEmitter();
 
-  deleteCharacter(id:number): void {
+  deleteCharacter(id?: string): void {
+    if (!id) return
     this.onDeleteCharacter.emit(id);
   }
 
