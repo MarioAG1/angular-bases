@@ -21,7 +21,7 @@ export class DbzService {
   }
   ];
 
-  onNewCharacter(character: Character): void {
+  addCharacter(character: Character): void {
     // Para añadir los id a cada nuevo personaje
     const newCharacter: Character = { ...character, id: uuid() }
     this.characters.push(newCharacter)

@@ -10,7 +10,7 @@ export class AddCharacterComponent {
 
   //Para comunicar por el main
   @Output()
-  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+  public onNew: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
     name: "",
@@ -23,7 +23,7 @@ export class AddCharacterComponent {
 
     //Enviar el nuevo personaje
 
-    this.onNewCharacter.emit({ ... this.character });
+    this.onNew.emit({ ... this.character });
     // Si ponemos este a la hora de ejecutar se sobreescribe la limpieza de valores y lo ejecuta pero a la hora de pasar la informaciones se queda limpia
     // this.onNewCharacter.emit(this.character)
 
